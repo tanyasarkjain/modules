@@ -1,68 +1,93 @@
----
 # yaml-language-server: $schema=https://raw.githubusercontent.com/nf-core/modules/master/modules/meta-schema.json
 name: "hificnv"
-## TODO nf-core: Add a description of the module and list keywords
-description: write your description here
+description: Pacbio's copy number variant caller and depth visualization utlity
 keywords:
   - sort
   - example
   - genomics
 tools:
   - "hificnv":
-      ## TODO nf-core: Add a description and other details for the software below
-      description: ""
-      homepage: ""
-      documentation: ""
-      tool_dev_url: ""
-      doi: ""
-      licence: 
-      identifier: 
-
-## TODO nf-core: Add a description of all of the variables used as input
+      description: "Copy number variant caller and depth visualization utility for PacBio
+        HiFi reads"
+      homepage: "https://github.com/PacificBiosciences/HiFiCNV?tab=readme-ov-file"
+      documentation: "https://github.com/PacificBiosciences/HiFiCNV?tab=readme-ov-file"
+      tool_dev_url: "https://github.com/PacificBiosciences/HiFiCNV?tab=readme-ov-file"
+      licence: ["Pacific Biosciences Software License Agreement"]
+      identifier: ""
 input:
-  # Only when we have meta
   - - meta:
         type: map
         description: |
           Groovy Map containing sample information
           e.g. `[ id:'sample1', single_end:false ]`
-  
-  ## TODO nf-core: Delete / customise this example input
     - bam:
         type: file
-        description: Sorted BAM/CRAM/SAM file
-        pattern: "*.{bam,cram,sam}"
-        ontologies:
-          - edam: "http://edamontology.org/format_25722"
-          - edam: "http://edamontology.org/format_2573"
-          - edam: "http://edamontology.org/format_3462"
-          
-
-## TODO nf-core: Add a description of all of the variables used as output
-output:
-  - bam:
-  #Only when we have meta
-    - meta:
+        description: Sorted BAM
+        pattern: "*.{bam}"
+      ## TODO nf-core: Add a description of all of the variables used as output
+  - - meta:
         type: map
         description: |
           Groovy Map containing sample information
           e.g. `[ id:'sample1', single_end:false ]`
-  ## TODO nf-core: Delete / customise this example output
-    - "*.bam":
+    - fasta:
         type: file
-        description: Sorted BAM/CRAM/SAM file
-        pattern: "*.{bam,cram,sam}"
-        ontologies:
-          - edam: "http://edamontology.org/format_25722"
-          - edam: "http://edamontology.org/format_2573"
-          - edam: "http://edamontology.org/format_3462"
-          
+        description: Fasta file used as the reference for the bam
+        pattern: "*.{fasta}"
+  - - meta:
+        type: map
+        description: |
+          Groovy Map containing sample information
+          e.g. `[ id:'sample1', single_end:false ]`
+    - bed:
+        type: file
+        description: bed file with regions to exclude
+        pattern: "*.{bam}"
+output:
+  - vcf:
+      - meta:
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'sample1', single_end:false ]`
+          pattern: "*.vcf.gz"
+      - "*.vcf.gz":
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'sample1', single_end:false ]`
+          pattern: "*.vcf.gz"
+  - depth_bw:
+      - meta:
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'sample1', single_end:false ]`
+          pattern: "*.bw"
+      - "*depth.bw":
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'sample1', single_end:false ]`
+          pattern: "*.bw"
+  - bedgraph:
+      - meta:
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'sample1', single_end:false ]`
+          pattern: "*.copynum.bedgraph"
+      - "*.copynum.bedgraph":
+          type: map
+          description: |
+            Groovy Map containing sample information
+            e.g. `[ id:'sample1', single_end:false ]`
+          pattern: "*.copynum.bedgraph"
   - versions:
-    - "versions.yml":
-        type: file
-        description: File containing software versions
-        pattern: "versions.yml"
-
+      - versions.yml:
+          type: file
+          description: File containing software versions
+          pattern: "versions.yml"
 authors:
   - "@tanyasarkjain"
 maintainers:

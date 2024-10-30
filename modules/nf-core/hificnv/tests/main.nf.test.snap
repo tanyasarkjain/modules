@@ -1,0 +1,108 @@
+{
+    "hificnv stub - [bam] [fasta] [bed]": {
+        "content": [
+            {
+                "0": [
+                    [
+                        {
+                            "id": "test",
+                            "single_end": false
+                        },
+                        "/Users/tanyajain/Desktop/nextflow_fun/modules/.nf-test/tests/eb6a3b9ece897e514ea98ad929feb1e5/work/70/dee9d63b4c97721d46dc0c048b34d1/test.vcf.gz"
+                    ]
+                ],
+                "1": [
+                    [
+                        {
+                            "id": "test",
+                            "single_end": false
+                        },
+                        "test.depth.bw:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "2": [
+                    [
+                        {
+                            "id": "test",
+                            "single_end": false
+                        },
+                        "test.copynum.bedgraph:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "3": [
+                    "versions.yml:md5,6aa8dbe604b99c8f2eb5f8a11cb0f4db"
+                ],
+                "bedgraph": [
+                    [
+                        {
+                            "id": "test",
+                            "single_end": false
+                        },
+                        "test.copynum.bedgraph:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "depth_bw": [
+                    [
+                        {
+                            "id": "test",
+                            "single_end": false
+                        },
+                        "test.depth.bw:md5,d41d8cd98f00b204e9800998ecf8427e"
+                    ]
+                ],
+                "vcf": [
+                    [
+                        {
+                            "id": "test",
+                            "single_end": false
+                        },
+                        "/Users/tanyajain/Desktop/nextflow_fun/modules/.nf-test/tests/eb6a3b9ece897e514ea98ad929feb1e5/work/70/dee9d63b4c97721d46dc0c048b34d1/test.vcf.gz"
+                    ]
+                ],
+                "versions": [
+                    "versions.yml:md5,6aa8dbe604b99c8f2eb5f8a11cb0f4db"
+                ]
+            }
+        ],
+        "meta": {
+            "nf-test": "0.9.0",
+            "nextflow": "24.04.4"
+        },
+        "timestamp": "2024-10-29T23:21:43.408159"
+    },
+    "hificnv - [bam] [fasta] [bed]": {
+        "content": [
+            {
+                "0": [
+                    
+                ],
+                "1": [
+                    
+                ],
+                "2": [
+                    
+                ],
+                "3": [
+                    
+                ],
+                "bedgraph": [
+                    
+                ],
+                "depth_bw": [
+                    
+                ],
+                "vcf": [
+                    
+                ],
+                "versions": [
+                    
+                ]
+            }
+        ],
+        "meta": {
+            "nf-test": "0.9.0",
+            "nextflow": "24.04.4"
+        },
+        "timestamp": "2024-10-29T23:21:31.346076"
+    }
+}
